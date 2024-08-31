@@ -1,2 +1,2 @@
-export * from "./encryption.common";
+export * from "./bcrypt.common";
 export * from "./jwt.common";

@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { Envioronments } from "../utils";
+import { DBTypes, Envioronments } from "../utils";
 import { EmployeeEntity, TenantEntity } from "./enitites";
 
 let synchronize = true;
@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== Envioronments.LOCAL) {
 }
 
 export const AppDataSource = new DataSource({
-  type: "postgres",
+  type: process.env.DB_TYPE as DBTypes,
   host: process.env.DB_HOST_NAME,
   port: Number(process.env.DB_PORT),
   username: process.env.DB_USER_NAME,

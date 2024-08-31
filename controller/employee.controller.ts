@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { create, getById } from "../services/employee.service";
-import { JWTPayloadType, ResponseCodes } from "../utils";
+import { ResponseCodes } from "../utils";
 
 export const getProfile = async (req: Request, res: Response) => {
   try {
-    const { id, tenantId } = req.user as JWTPayloadType;
+    const { id, tenantId } = req.user;
 
     const employee = await getById(id, tenantId);
 
@@ -20,7 +20,7 @@ export const getProfile = async (req: Request, res: Response) => {
 
 export const createEmployee = async (req: Request, res: Response) => {
   try {
-    const { tenantId } = req.user as JWTPayloadType;
+    const { tenantId } = req.user;
 
     await create({
       ...req.body,

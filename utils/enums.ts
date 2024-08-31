@@ -17,3 +17,19 @@ export enum Envioronments {
   DEVELOPMENT = "development",
   PRODUCTION = "production",
 }
+
+export enum DBTypes {
+  MYSQL = "mysql",
+  POSTGRES = "postgres",
+  SQLITE = "sqlite",
+}
+
+export enum SQSEventType {
+  EMPLOYEE_ANALYTICS = "EMPLOYEE_ANALYTICS",
+}
+
+export enum DeviceTypes {
+  ANDROID = "ANDROID",
+  IOS = "IOS",
+  WEB = "WEB",
+}
